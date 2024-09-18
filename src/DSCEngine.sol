@@ -65,8 +65,8 @@ contract DSCEngine is ReentrancyGuard {
     uint256 private constant ADDITIONAL_FEED_PRECISION = 1e10;
     uint256 private constant PRECISION = 1e18;
     uint256 private constant LIQUIDATION_THRESHOLD = 50; // This means you need to be 200% over-collateralized
-    uint256 private constant LIQUIDATION_PRECISION = 100;  
-    uint256 private constant MIN_HEALTH_FACTOR = 1e18;  
+    uint256 private constant LIQUIDATION_PRECISION = 100;
+    uint256 private constant MIN_HEALTH_FACTOR = 1e18;
 
     mapping(address token => address priceFeed) private s_priceFeeds; // tokenToPriceFeed
     mapping(address user => mapping(address token => uint256 amount)) private s_collateralDeposited;
@@ -187,7 +187,7 @@ contract DSCEngine is ReentrancyGuard {
     }
 
     function _revertIfHealthFactorIsBroken(address user) internal view {
-       uint256 userHealthFactor = _healthFactor(user);
+        uint256 userHealthFactor = _healthFactor(user);
         if (userHealthFactor < MIN_HEALTH_FACTOR) {
             revert DSCEngine__BreaksHealthFactor(userHealthFactor);
         }

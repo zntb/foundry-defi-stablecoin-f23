@@ -1,0 +1,92 @@
+Compiling 46 files with Solc 0.8.19
+Solc 0.8.19 finished in 2.68s
+Compiler run successful!
+Analysing contracts...
+Running tests...
+
+Ran 3 tests for test/unit/OracleLibTest.t.sol:OracleLibTest
+[PASS] testGetTimeout() (gas: 6446)
+[PASS] testPriceRevertsOnBadAnsweredInRound() (gas: 27611)
+[PASS] testPriceRevertsOnStaleCheck() (gas: 25511)
+Suite result: ok. 3 passed; 0 failed; 0 skipped; finished in 4.51ms (801.75µs CPU time)
+
+Ran 4 tests for test/unit/DecentralizedStablecoinTest.t.sol:DecentralizedStablecoinTest
+[PASS] testCantBurnMoreThanYouHave() (gas: 62491)
+[PASS] testCantMintToZeroAddress() (gas: 14681)
+[PASS] testMustBurnMoreThanZero() (gas: 62488)
+[PASS] testMustMintMoreThanZero() (gas: 13491)
+Suite result: ok. 4 passed; 0 failed; 0 skipped; finished in 25.72ms (878.65µs CPU time)
+
+Ran 2 tests for test/fuzz/continueOnRevert/ContinueOnRevertInvariants.t.sol:ContinueOnRevertInvariants
+[FAIL: panic: arithmetic underflow or overflow (0x11)]
+	[Sequence]
+		sender=0x0000000000000000000000000000000000000070 addr=[test/fuzz/continueOnRevert/ContinueOnRevertHandler.t.sol:ContinueOnRevertHandler]0x2e234DAe75C793f67A35089C9d99245E1C58470b calldata=redeemCollateral(uint256,uint256) args=[41654741153853 [4.165e13], 164479480983356 [1.644e14]]
+ invariant_callSummary() (runs: 0, calls: 0, reverts: 1)
+[FAIL: panic: arithmetic underflow or overflow (0x11)]
+	[Sequence]
+		sender=0x0000000000000000000000000000000000000070 addr=[test/fuzz/continueOnRevert/ContinueOnRevertHandler.t.sol:ContinueOnRevertHandler]0x2e234DAe75C793f67A35089C9d99245E1C58470b calldata=redeemCollateral(uint256,uint256) args=[41654741153853 [4.165e13], 164479480983356 [1.644e14]]
+ invariant_protocolMustHaveMoreValueThatTotalSupplyDollars() (runs: 0, calls: 0, reverts: 1)
+Suite result: FAILED. 0 passed; 2 failed; 0 skipped; finished in 349.45ms (10.42ms CPU time)
+
+Ran 40 tests for test/unit/DSCEngineTest.t.sol:DSCEngineTest
+[PASS] testCanBurnDsc() (gas: 258819)
+[PASS] testCanDepositCollateralWithoutMinting() (gas: 92298)
+[PASS] testCanDepositedCollateralAndGetAccountInfo() (gas: 147780)
+[PASS] testCanMintDsc() (gas: 219343)
+[PASS] testCanMintWithDepositedCollateral() (gas: 217918)
+[PASS] testCanRedeemCollateral() (gas: 139831)
+[PASS] testCanRedeemDepositedCollateral() (gas: 265044)
+[PASS] testCantBurnMoreThanUserHas() (gas: 14015)
+[PASS] testCantLiquidateGoodHealthFactor() (gas: 394005)
+[PASS] testEmitCollateralRedeemedWithCorrectArgs() (gas: 141376)
+[PASS] testGetAccountCollateralValue() (gas: 145193)
+[PASS] testGetAccountCollateralValueFromInformation() (gas: 147740)
+[PASS] testGetCollateralBalanceOfUser() (gas: 87039)
+[PASS] testGetCollateralTokenPriceFeed() (gas: 12991)
+[PASS] testGetCollateralTokens() (gas: 16783)
+[PASS] testGetDsc() (gas: 8085)
+[PASS] testGetLiquidationThreshold() (gas: 5864)
+[PASS] testGetMinHealthFactor() (gas: 5884)
+[PASS] testGetTokenAmountFromUsd() (gas: 31131)
+[PASS] testGetUsdValue() (gas: 31042)
+[PASS] testHealthFactorCanGoBelowOne() (gas: 314139)
+[PASS] testLiquidationPayoutIsCorrect() (gas: 553210)
+[PASS] testLiquidationPrecision() (gas: 5856)
+[PASS] testLiquidatorTakesOnUsersDebt() (gas: 551048)
+[PASS] testMustImproveHealthFactorOnLiquidation() (gas: 4017837)
+[PASS] testMustRedeemMoreThanZero() (gas: 246098)
+[PASS] testProperlyReportsHealthFactor() (gas: 233799)
+[PASS] testRevertsIfBurnAmountIsZero() (gas: 215771)
+[PASS] testRevertsIfCollateralZero() (gas: 45531)
+[PASS] testRevertsIfMintAmountBreaksHealthFactor() (gas: 189795)
+[PASS] testRevertsIfMintAmountIsZero() (gas: 215707)
+[PASS] testRevertsIfMintFails() (gas: 3624431)
+[PASS] testRevertsIfMintedDscBreaksHealthFactor() (gas: 188037)
+[PASS] testRevertsIfRedeemAmountIsZero() (gas: 216213)
+[PASS] testRevertsIfTokenLengthDoesntMatchPriceFeeds() (gas: 184741)
+[PASS] testRevertsIfTransferFails() (gas: 3494470)
+[PASS] testRevertsIfTransferFromFails() (gas: 3517557)
+[PASS] testRevertsWithUnapprovedCollateral() (gas: 1374185)
+[PASS] testUserHasNoMoreDebt() (gas: 550949)
+[PASS] testUserStillHasSomeEthAfterLiquidation() (gas: 581897)
+Suite result: ok. 40 passed; 0 failed; 0 skipped; finished in 556.88ms (429.18ms CPU time)
+
+Ran 2 tests for test/fuzz/failOnRevert/StopOnRevertInvariants.t.sol:StopOnRevertInvariants
+[PASS] invariant_gettersCantRevert() (runs: 64, calls: 4096, reverts: 0)
+[PASS] invariant_protocolMustHaveMoreValueThatTotalSupplyDollars() (runs: 64, calls: 4096, reverts: 0)
+Suite result: ok. 2 passed; 0 failed; 0 skipped; finished in 4.51s (7.09s CPU time)
+
+Ran 5 test suites in 4.51s (5.45s CPU time): 49 tests passed, 2 failed, 0 skipped (51 total tests)
+
+Failing tests:
+Encountered 2 failing tests in test/fuzz/continueOnRevert/ContinueOnRevertInvariants.t.sol:ContinueOnRevertInvariants
+[FAIL: panic: arithmetic underflow or overflow (0x11)]
+	[Sequence]
+		sender=0x0000000000000000000000000000000000000070 addr=[test/fuzz/continueOnRevert/ContinueOnRevertHandler.t.sol:ContinueOnRevertHandler]0x2e234DAe75C793f67A35089C9d99245E1C58470b calldata=redeemCollateral(uint256,uint256) args=[41654741153853 [4.165e13], 164479480983356 [1.644e14]]
+ invariant_callSummary() (runs: 0, calls: 0, reverts: 1)
+[FAIL: panic: arithmetic underflow or overflow (0x11)]
+	[Sequence]
+		sender=0x0000000000000000000000000000000000000070 addr=[test/fuzz/continueOnRevert/ContinueOnRevertHandler.t.sol:ContinueOnRevertHandler]0x2e234DAe75C793f67A35089C9d99245E1C58470b calldata=redeemCollateral(uint256,uint256) args=[41654741153853 [4.165e13], 164479480983356 [1.644e14]]
+ invariant_protocolMustHaveMoreValueThatTotalSupplyDollars() (runs: 0, calls: 0, reverts: 1)
+
+Encountered a total of 2 failing tests, 49 tests succeeded
